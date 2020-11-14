@@ -1,0 +1,644 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin mobile {
+    @media (max-width: 400px){
+        @content;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.container {
+    padding: 15px;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex: 0 0 auto;
+    align-items: center;
+   
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    &__title {
+       font-family: "Josefin Sans", sans-serif;
+  font-size: 48px;
+  letter-spacing: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+
+        &--small {
+            color: #ffffff;
+    font-family: "Josefin Sans";
+    font-size: 22px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+   
+        }
+    }
+
+    &__description {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 17px;
+        letter-spacing: 9px;
+        font-style: 300;
+        color: #fff;
+        text-align: center;
+
+        &--small {
+            font-size: 12px;
+            letter-spacing: normal;
+            margin-top: 16px;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../img/Header.jpeg);
+    background-size: cover;
+    background-position: top left;
+    
+    &__searchfeald {
+        display:flex;
+        width: 100%;
+        max-width: 650px;
+        margin-top: 48px;
+        border:none;
+        background: #fff;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__input {
+        width: 100%;
+        height: 45px;
+        text-align: center;
+        border: none;
+
+        &::placeholder{
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 10px;
+            letter-spacing: 4px;
+            font-style: 300;
+        }
+    }
+
+    &__button {
+        width: 145px;
+        height: 45px;
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        align-items: center;
+        background-color: #5474fd;
+        border: none;
+
+        @include mobile {
+            width: 50px;
+        }
+    }
+
+    &__search {
+        font-family: 'Aleo', serif;
+        font-size: 10px;
+        font-style: 400;
+        text-transform: uppercase;
+        color: #fff;
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__scroll {
+        margin-top: 118px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    &__scrolltxt {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 10px;
+        letter-spacing: 4px;
+        font-style: 300;
+        color: #fff;
+    }
+}
+
+.bccolor {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 0 0 auto;
+    background: #5474fd;
+}
+
+.navcontainer {
+    padding: 0px 15px 0px 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+
+    &__toggler {
+        display: none;
+    }
+
+    &__title {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 18px;
+        letter-spacing: 5px;
+        font-style: 700;
+        text-transform: uppercase;
+        color: #fff;       
+    }
+
+    &__menu {
+        width: 50%;
+    }
+
+    &__items {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #fff;        
+    }
+    
+    &__item {
+        font-family: 'Aleo', serif;
+        font-size: 10px;
+        font-style: 400;
+        text-transform: uppercase;
+                        
+        &:hover {
+            font-size: 15px;
+            transition: 0.2s;
+        }
+    }
+
+    @include mobile {
+        &__toggler {
+            display: flex;
+            align-items: flex-end;
+            align-content: flex-end;
+        }
+
+        &__menu {
+            width: 24px;
+        }
+
+        &__items {
+            width: 100%;
+            display: none;
+            position: absolute;
+            right: 0;
+            background: #5474fd;
+        }
+
+        &__item {
+            height: 24px;
+        }
+
+        &__toggler:hover + &__items,
+        &__items:hover {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.section_first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    min-height: 700px;
+    background-image: url(../img/Second.jpeg);
+    background-size: cover;
+    background-position: bottom left;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    &__title {
+        font-family: 'Aleo', serif;
+        font-size: 36pt;
+        font-style: 400;
+        color: #fff;
+        margin-bottom: 70px;
+    }
+
+    &__description {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 16pt;
+        font-style: 300;
+        color: #fff;
+    }
+
+    &__img1 {
+        align-self: flex-end;
+    }
+    
+    @include mobile {
+        flex-wrap: wrap;
+
+        &__img{
+            align-self: center;
+        }
+
+        &__img1{
+            align-self: center;
+        }
+    }
+}
+
+.button {
+    margin-top: 50px;
+    width: 225px;
+    height: 60px;
+    border: none;
+    background-image: url(../img/Buttonbackground.png);
+    background-size: cover;
+    font-family: 'Aleo', serif;
+    font-size: 16pt;
+    font-style: 400;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.left {
+    width: 50%;
+    margin: 15px;
+
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.right {
+    width: 50%;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.image {
+    margin-left: 65px;
+
+    @include mobile {
+        margin: 0;
+    }
+}
+
+.section_second {
+    background: #333333;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.art {
+    position: relative;
+    margin-top: 46px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    &__item1 {
+        display: none;
+    }
+
+    @include mobile {
+        
+        &__item {
+            display: none;
+        }
+
+        &__item1 {
+            display: block;
+        }
+    }
+}
+
+.menucontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.menu {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    list-style: none;
+    position: absolute;
+    justify-content: space-between;
+
+    &__items{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    &__logo {
+        background: #333333;
+    }
+
+    &__description {
+        font-family: 'Aleo', serif;
+        font-size: 26px;
+        font-style: 400;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+.section_third {
+    min-height: 700px;
+    background-image: url(../img/Third.jpeg);
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.inner {
+    width: 100%;
+    display: flex;
+
+    &--left {
+        justify-content: flex-start;
+    }
+
+    &--right {
+        justify-content: flex-end;
+    }
+}
+
+.container_about {
+    padding: 0px 15px 0px 15px;
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    background: rgba(0,0,0,0.8);
+    margin-top: 100px;
+
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.about {
+    &__name {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 20pt;
+        font-style: 300;
+        color: #fff;
+    }
+
+    &__title {        
+        margin-top: 30px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 20pt;
+        font-style: 300;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    &__description {
+        margin-top: 30px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 16px;
+        font-style: 300;
+        color: #fff;
+        line-height: 26pt;
+    }
+
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.section_fourth{
+    min-height: 700px;
+    background-image: url(../img/Fourth.jpeg);
+    background-size: cover;
+    background-position: bottom center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.section_fifth {
+    min-height: 700px;
+    background-image: url(../img/Fifth.jpeg);
+    background-size: cover;
+    background-position: bottom left;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.contain {
+    padding: 30px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.testimonial {
+    width: 100%;
+    min-height: 284px;
+
+    &__img {
+        height: 100%;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__description {
+        padding: 50px 55px 50px 60px;
+        background: #333333;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include mobile {
+            background: rgba(51, 51, 51, 0.5);
+        }
+    }
+
+    &__name {
+        font-family: 'Josefin Sans', sans-serif;
+        font-style: 300;
+        font-size: 20px;
+        color: #fff;
+    }
+
+    &__text {
+        width: 100%;
+        font-size: 16px;
+        line-height: 1.5;
+        font-family: 'Josefin Sans', sans-serif;
+        font-style: 100;
+        color: #fff;
+
+        &::first-letter {
+            padding-left: 30px;
+        }
+    }
+    &__quote {
+        font-size: 22px;
+        color: #5474fd;
+    }     
+    
+    @include mobile {
+        min-height: 0;
+
+        &__content {
+            flex-wrap: wrap;
+        }
+
+        &__photo {
+            width: 100%
+        }
+        
+        &__img {
+            width: 100%;
+        }
+    }
+}
+
+.contain_title {
+    margin-bottom: 100px;
+    font-family: 'Aleo', serif;
+    font-size: 26px;
+    font-style: 400;
+    color: #fff;
+
+    @include mobile {
+        margin-bottom: 50px;
+    }
+}
+
+.end {
+    background: #232323;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.container_footer {
+    margin-top: 120px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include mobile {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__menu {
+        list-style: none;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+
+        &:hover {
+            color: #5474fd;
+        }
+    }
+
+    &__items {
+        margin-left: 11px;
+        margin-right: 11px;
+    }
+}
